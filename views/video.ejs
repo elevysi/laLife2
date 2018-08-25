@@ -1,0 +1,23 @@
+<div class="cbp-l-inline">
+    <div class="row text-center">
+        <video width="640" height="360" controls>
+            <source src="<%= snap.originalPath %>" type="<%= snap.mime %>">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <hr>
+    <div class="row text-center">
+        <div class="col-sm-6">
+            <div class="cbp-l-inline-title"><%= snap.name %></div>
+            <div class="cbp-l-inline-subtitle"><%= moment(snap.created).format('dddd MMMM Do YYYY') %></div>
+            <a href="/view/<%= snap.id %>" class="cbp-l-inline-view">VIEW Video</a>
+        </div>
+
+        <div class="col-sm-6 cbp-l-inline-desc">
+             <%= snap.description %>
+        </div>
+
+           
+    </div>        
+    </div>
+</div>
