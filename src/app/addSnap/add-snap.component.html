@@ -1,0 +1,11 @@
+<h3>Add a Snap</h3>
+
+<!--<p>
+    <input type='file' name='photo[image]' />
+</p>-->
+
+<input type="text" [(ngModel)]="name" placeholder="name" class="form-control" />
+<input type="text" [(ngModel)]="description" placeholder="description" />
+<input type="text" [(ngModel)]="path" placeholder="path" />
+
+<button (click)="addSnap()">Add Snap</button>

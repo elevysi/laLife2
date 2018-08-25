@@ -1,0 +1,28 @@
+<div class="headline">
+    <h2>Albums</h2>
+</div>
+
+<div class="row news-v2">
+
+    <div class="col-md-3" *ngFor="let album of albums">
+        <div class="thumbnails thumbnail-style thumbnail-kenburn">
+            <div class="thumbnail-img">
+                    
+                <div class="overflow-hidden">
+                    <img class="img-responsive" src="/site/resources_1_9_5/img/main/img22.jpg" alt="albumIllustrator">
+                </div>
+                
+                <a class="btn-more hover-effect" routerLink="/albums/view/{{album._id}}">read more +</a>
+            </div>
+            <div class="caption">
+                <h3><a class="hover-effect" routerLink="/albums/view/{{album._id}}">{{album.name}}</a></h3>
+                <small>By <a href="/site/public/profile/elevysi">{{album.owner}}</a> | {{album.created}}</small>
+                <p>{{album.description}}</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+	
+
+	

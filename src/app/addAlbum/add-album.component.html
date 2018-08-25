@@ -1,0 +1,56 @@
+<form class="form-horizontal" role="form" #albumForm="ngForm" (ngSubmit)="albumForm.form.valid && onSubmit()" novalidate>
+
+    <div class="form-group">
+        <label for="inputName" class="col-lg-2 control-label">Name</label>
+        <div class="col-lg-10">
+            <input class="form-control" id="inputName" placeholder="Name" type="text" name="name" [(ngModel)]="model.name" #name="ngModel" required>
+            <div *ngIf="albumForm.submitted && !name.valid" class="help-block alert alert-danger">Name is required</div>
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="inputDescription" class="col-lg-2 control-label">Description</label>
+        <div class="col-lg-10">
+            <input class="form-control" id="inputDescription" placeholder="Description" type="text" [(ngModel)]="model.description" name="description"  #description="ngModel" required>
+            <div *ngIf="albumForm.submitted && !description.valid" class="help-block alert alert-danger">Description is required</div>
+        </div>
+    </div>
+
+
+     <div class="form-group">
+        <label for="inputAddress" class="col-lg-2 control-label">Address</label>
+        <div class="col-lg-10">
+            <input class="form-control" id="inputAddress" placeholder="Address" type="text" [(ngModel)]="model.address" name="address">
+        </div>
+    </div>
+
+    
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" [(ngModel)]="model.featured" name="featured"> Featured
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" [(ngModel)]="model.publicAlbum" name="publicAlbum"> Public Album
+                </label>
+            </div>
+        </div>
+    </div> 
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="submit" class="btn-u btn-u-green"> Create Album</button>
+            <!--<button type="submit" class="btn-u btn-u-green" [disabled]="!albumForm.form.valid">Create Album</button>-->
+        </div>
+    </div>
+</form>

@@ -1,0 +1,86 @@
+<div *ngIf="snap">
+    <h3 class="text-center">View Snap - {{snap.name}} </h3>
+<hr class="devider devider-dashed">
+    <div *ngIf="snap.type == undefined || (snap.type !== undefined && snap.type == 'image')">
+        <img class="img-responsive full-width" src="{{snap.path}}" alt="img_view">
+    </div>
+
+    <div *ngIf="snap.type !== undefined && snap.type == 'video'" class="text-center img-responsive full-width">
+        <video controls>
+            <source src="{{snap.path}}" type="{{snap.mime}}">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+
+<table class="table">
+    <tr>
+        <td>Name</td>
+        <td>{{snap.name}}</td>
+    </tr>
+
+    <tr>
+        <td>Description</td>
+        <td>{{snap.description}}</td>
+    </tr>
+
+    <tr>
+        <td>Type</td>
+        <td>{{snap.type}}</td>
+    </tr>
+
+    <tr>
+        <td>Path</td>
+        <td>{{snap.path}}</td>
+    </tr>
+
+     <tr>
+        <td>Thumbnail</td>
+        <td>{{snap.thumbnailPath}}</td>
+    </tr>
+
+    <tr>
+        <td>Unmarked Thumbnail</td>
+        <td>{{snap.unMarkedThumbnailPath}}</td>
+    </tr>
+
+    <tr>
+        <td>Original Name</td>
+        <td>{{snap.originalname}}</td>
+    </tr>
+
+     <tr>
+        <td>File Name</td>
+        <td>{{snap.fileName}}</td>
+    </tr>
+
+    <tr *ngIf="snap.album !== undefined">
+        <td>Album</td>
+        <td><a routerLink="/albums/view/{{snap.album._id}}">{{snap.album.name}}</a></td>
+    </tr>
+
+    <tr *ngIf="snap.featured !== undefined">
+        <td>Featured</td>
+        <td>{{snap.featured}}</td>
+    </tr>
+
+    <tr *ngIf="snap.publicSnap !== undefined">
+        <td>Public</td>
+        <td>{{snap.publicSnap}}</td>
+    </tr>
+
+    <tr>
+        <td>Created</td>
+        <td>{{snap.created}}</td>
+    </tr>
+</table>
+    <div class="btn-group">
+        <button class="btn-u btn-brd rounded-2x btn-u-aqua btn-u-xs" (click)="deleteSnap(snap._id)">
+            <i class="fa fa-trash"></i>Delete this Snap
+        </button>
+
+        <a class="btn-u btn-brd rounded-2x btn-u-aqua btn-u-xs" routerLink="/edit/{{snap._id}}">
+            <i class="fa fa-edit"></i>Edit this Snap
+        </a>
+    </div>
+</div>

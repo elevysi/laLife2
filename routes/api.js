@@ -11,8 +11,8 @@ var sharp = require("sharp");
 
 var Snap = require("../models/snap");
 
-const UPLODAS_DIR_ABSOLUTE = './client/uploads/';
-const UPLOADS_THUMB_DIR_ABSOLUTE = './client/uploads/thumbnails/';
+const UPLODAS_DIR_ABSOLUTE = './static/uploads/';
+const UPLOADS_THUMB_DIR_ABSOLUTE = './static/uploads/thumbnails/';
 
 const UPLOADS_DIR_RELATIVE = "uploads/";
 const UPLOADS_THUMBS_DIR_RELATIVE = "uploads/thumbnails/";
@@ -20,8 +20,8 @@ const UPLOADS_THUMBS_DIR_RELATIVE = "uploads/thumbnails/";
 const THUMBANAIL_WIDTH = 400;
 const THUMBNAIL_HEIGHT = 400;
 
-const PRESS_PLAY =  path.join(__dirname + '/..', 'client/assets/img/1497205323_youtube-play.png');
-const WATERMARK =  path.join(__dirname + '/..', 'client/assets/img/logoWhiteTransparent.png');
+const PRESS_PLAY =  path.join(__dirname + '/..', 'dist/laLife2/assets/img/thumbnail-img/1497205323_youtube-play.png');
+const WATERMARK =  path.join(__dirname + '/..', 'dist/laLife2/assets/img/thumbnail-img/logoWhiteTransparent.png');
 
 
 //Dynamic Storage

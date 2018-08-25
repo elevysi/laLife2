@@ -1,0 +1,98 @@
+<form class="form-horizontal" role="form" #userForm="ngForm" (submit)="userForm.form.valid && submit()" novalidate>
+
+<h1>Edit Profile</h1>
+    
+
+     <div class="input-group margin-bottom-20">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input type="text" class="form-control" placeholder="Username" [(ngModel)]="model.username" name="username" #username="ngModel" required>
+        <div *ngIf="userForm.submitted && !username.valid" class="help-block alert alert-danger">Username is required</div>
+    </div>
+
+    <div class="input-group margin-bottom-20">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input type="text" class="form-control" placeholder="First Name" [(ngModel)]="model.firstName" name="firstName" #firstName="ngModel" required>
+        <div *ngIf="userForm.submitted && !firstName.valid" class="help-block alert alert-danger">First Name is required</div>
+    </div>
+
+
+    <div class="input-group margin-bottom-20">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="model.lastName" name="lastName" #lastName="ngModel" required>
+        <div *ngIf="userForm.submitted && !lastName.valid" class="help-block alert alert-danger">Last Name is required</div>
+    </div>
+
+    <div class="input-group margin-bottom-20">
+        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+        <input type="email" class="form-control" placeholder="Email" [(ngModel)]="model.email" name="email" #email="ngModel" required>
+        <div *ngIf="userForm.submitted && !email.valid" class="help-block alert alert-danger">A valid email is required</div>
+    </div>
+
+    <div class="input-group margin-bottom-20">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <textarea class="form-control" placeholder="Bio" [(ngModel)]="model.bio" name="bio" #bio="ngModel"></textarea>
+    </div>
+    
+    
+    <hr>
+
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <button type="submit" class="btn-u btn-u-green"> Save</button>
+        </div>
+    </div>
+
+<!--End Reg Block-->
+</form>
+<hr>
+
+<button class="btn-u btn-u-blue" (click)="setTooglePasswordChange()">
+    <span *ngIf=!(tooglePasswordChange)>
+        Update Password
+    </span>
+
+    <span *ngIf=(tooglePasswordChange)>
+        Cancel Update Password
+    </span>  
+    
+</button>
+<hr>
+<div *ngIf=(tooglePasswordChange)>
+
+<form class="form-horizontal" role="form" #passUpdateForm="ngForm" (submit)="passUpdateForm.form.valid && updatePass()" novalidate>
+
+
+<!--Reg Block-->
+<div class="reg-block">
+
+    <div class="input-group margin-bottom-20">
+        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+        <input type="password" class="form-control" placeholder="Current Password" [(ngModel)]="model.currentPassword" name="currentPassword" #currentPassword="ngModel" required>
+        <div *ngIf="passUpdateForm.submitted && !currentPassword.valid" class="help-block alert alert-danger">The current password is required</div>
+    </div>
+
+    <div class="input-group margin-bottom-20">
+        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+        <input type="password" class="form-control" placeholder="New Password" [(ngModel)]="model.newPassword" name="newPassword" #newPassword="ngModel" required>
+        <div *ngIf="passUpdateForm.submitted && !newPassword.valid" class="help-block alert alert-danger">The new password is required</div>
+    </div>
+
+    <div class="input-group margin-bottom-20">
+        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+        <input type="password" class="form-control" placeholder="Confirm Password" [(ngModel)]="model.confirmPassword" name="confirmPassword" #confirmPassword="ngModel" required>
+        <div *ngIf="passUpdateForm.submitted && !confirmPassword.valid" class="help-block alert alert-danger">Please confirm the new password</div>
+    </div>
+    
+    <hr>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <button type="submit" class="btn-u btn-u-green">Update</button>
+        </div>
+    </div>
+</div>
+<!--End Reg Block-->
+</form>
+
+</div>

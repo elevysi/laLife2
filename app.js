@@ -51,10 +51,10 @@ app.use(bodyParser.urlencoded({extended : true}));
 
 //Set static folder, since there is an index file it will be rendered automatically
 app.use(express.static(path.join(__dirname, "dist/laLife2")));
-// app.use('/snaps', express.static(path.join(__dirname, 'dist')));
+app.use('/snaps', express.static(path.join(__dirname, 'static'))); //use with a prefix
 
 //Folder for files uploads
-app.set('uploadsDir', path.join(__dirname, 'uploads'));
+app.set('uploadsDir', path.join(__dirname, 'static/uploads'));
 
 // var upload = multer({dest : app.get('uploadsDir')});
 
@@ -83,7 +83,9 @@ app.delete("/api/albums/:id", auth, albumRoute.delete);
 
 
 //Users
-app.post("/api/register", auth, usersRoute.register); //only i can register users
+// app.post("/api/register", auth, usersRoute.register); //only i can register users
+app.post("/api/register", usersRoute.register); //only i can register users
+
 app.post("/api/login", usersRoute.login);
 app.get("/api/profile/:username", auth, usersRoute.profileRead);
 app.get("/api/users", auth, usersRoute.list);

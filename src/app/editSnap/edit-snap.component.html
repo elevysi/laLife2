@@ -1,0 +1,55 @@
+<form class="margin-bottom-40" role="form" name="form" (ngSubmit)="f.form.valid && submit()" #f="ngForm" novalidate>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="email" class="form-control" placeholder="Name" name="name" [(ngModel)]="model.name" #name="ngModel" required>
+        <div *ngIf="f.submitted && !name.valid" class="help-block">Name is required</div>
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea type="password" class="form-control" name="description" [(ngModel)]="model.description" #description="ngModel" required></textarea>
+        <div *ngIf="f.submitted && !description.valid" class="help-block">Description is required</div>
+    </div>
+
+    <div class="form-group">
+        <label for="fileDescription">Choose type of upload</label>
+        <select name="type" [(ngModel)]="model.type" class="form-control">
+            <option value="image">Image</option>
+            <option value="video">Video</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="fileDescription">Snap Album</label>
+        <select name="album" [(ngModel)]="model.album" class="form-control">
+            <option *ngFor="let album of albums" [ngValue]="album">  
+                {{album.name}}
+            </option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" [(ngModel)]="model.featured" name="featured"> Featured
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" [(ngModel)]="model.publicSnap" name="publicSnap"> Public Snap
+                </label>
+            </div>
+        </div>
+    </div>
+    
+    <button type="submit" class="btn-u btn-u-blue">Submit</button>
+</form>
+
+<a class="btn-u btn-brd rounded-2x btn-u-aqua btn-u-xs" routerLink="/view/{{model._id}}">
+            View this Snap
+</a>
