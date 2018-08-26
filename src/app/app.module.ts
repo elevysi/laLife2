@@ -8,6 +8,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { InMemoryWebApiModule } from "angular-in-memory-web-api";
 
 import { FileSelectDirective, FileDropDirective } from "ng2-file-upload/ng2-file-upload";
+import { NgxMasonryModule } from 'ngx-masonry';
 
 import { AppComponent }  from './app.component';
 import { SnapsComponent } from './snaps/snaps.component';
@@ -50,7 +51,8 @@ import { ControlMessagesComponent } from './_directives/control-messages.compone
       HttpModule,
       FormsModule,
       ReactiveFormsModule,
-      AppRoutingModule
+      AppRoutingModule,
+      NgxMasonryModule
       // AlertModule
     ],
   declarations: [ 
