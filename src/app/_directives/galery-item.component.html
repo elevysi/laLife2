@@ -1,41 +1,20 @@
-<div class="gallery_full_width_images_area row clearfix" #galeryContainer>
-    <!-- Single gallery Item -->
-    <div class="gra col-12 col-sm-6 col-md-4 single_gallery_item" #gridSnapsContainer>
-        <div class="single_gallery_content" *ngFor="let snap of compSnaps">
-            <img src="snaps/{{snap.thumbnailPath}}" alt="">
-            <!-- Hover Effects -->
-            <div class="hover_overlay">
-                <div class="gallery_info">
-                    <div class="zoom-details-btn">
-                        <a #popUpLink class="gallery_img animated fadeInDown" href="snaps/{{snap.originalPath}}"><i class="ti-zoom-in"></i></a>
-                        <!-- <a href="single-portfolio-1.html"><i class="ti-link"></i></a> -->
-                    </div>
-                    <h5>{{snap.name}}</h5>
-                    <p>{{snap.description}} In {{snap.album.name}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<div class="gallery_full_width_images_area row clearfix">
 
-<div class="gallery_full_width_images_area row clearfix" #galeryContainer>
-    <!-- Single gallery Item -->
-    <ngx-masonry [useImagesLoaded]="true">
-        <div class="gra col-12 col-sm-6 col-md-4 single_gallery_item" #gridSnapsContainer>
-            <ngxMasonryItem class="masonry-item" *ngFor="let snap of compSnaps">
+        <!-- Single gallery Item -->
+        <div class="gra col-12 col-sm-6 col-md-4 single_gallery_item_own" *ngFor="let snap of compSnaps">
+            <div class="single_gallery_content__own">
                 <img src="snaps/{{snap.thumbnailPath}}" alt="">
                 <!-- Hover Effects -->
                 <div class="hover_overlay">
                     <div class="gallery_info">
                         <div class="zoom-details-btn">
-                            <a #popUpLink class="gallery_img animated fadeInDown" href="snaps/{{snap.originalPath}}"><i class="ti-zoom-in"></i></a>
-                            <!-- <a href="single-portfolio-1.html"><i class="ti-link"></i></a> -->
+                            <a class="gallery_img_own animated fadeInDown" href="snaps/{{snap.originalPath}}"><i class="ti-zoom-in"></i></a>
+                            <a href="single-portfolio-1.html"><i class="ti-link"></i></a>
                         </div>
-                        <h5>{{snap.name}}</h5>
-                        <p>{{snap.description}} In {{snap.album.name}}</p>
+                        <h5>Creative Work</h5>
+                        <p>Catagory Name</p>
                     </div>
                 </div>
-            </ngxMasonryItem>
+            </div>
         </div>
-    </ngx-masonry>
 </div>

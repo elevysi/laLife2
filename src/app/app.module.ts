@@ -9,6 +9,7 @@ import { InMemoryWebApiModule } from "angular-in-memory-web-api";
 
 import { FileSelectDirective, FileDropDirective } from "ng2-file-upload/ng2-file-upload";
 import { NgxMasonryModule } from 'ngx-masonry';
+import { IsotopeModule } from 'ngx-isotope';
 
 import { AppComponent }  from './app.component';
 import { SnapsComponent } from './snaps/snaps.component';
@@ -52,7 +53,8 @@ import { ControlMessagesComponent } from './_directives/control-messages.compone
       FormsModule,
       ReactiveFormsModule,
       AppRoutingModule,
-      NgxMasonryModule
+      NgxMasonryModule,
+      IsotopeModule
       // AlertModule
     ],
   declarations: [ 

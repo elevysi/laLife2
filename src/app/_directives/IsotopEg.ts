@@ -120,3 +120,25 @@ export class GaleryItemComponent implements OnInit, AfterViewInit{
         }
     };
 }
+
+// <isotope-grid [options]="myOptions">
+//     <div class="gallery_full_width_images_area row clearfix" #galeryContainer>
+//         <!-- Single gallery Item -->
+//         <div class="gra col-12 col-sm-6 col-md-4 single_gallery_item" #gridSnapsContainer>
+//             <isotope-item class="single_gallery_content" *ngFor="let snap of compSnaps">
+//                 <img src="snaps/{{snap.thumbnailPath}}" alt="">
+//                 <!-- Hover Effects -->
+//                 <div class="hover_overlay">
+//                     <div class="gallery_info">
+//                         <div class="zoom-details-btn">
+//                             <a #popUpLink class="gallery_img animated fadeInDown" href="snaps/{{snap.originalPath}}"><i class="ti-zoom-in"></i></a>
+//                             <!-- <a href="single-portfolio-1.html"><i class="ti-link"></i></a> -->
+//                         </div>
+//                         <h5>{{snap.name}}</h5>
+//                         <p>{{snap.description}} In {{snap.album.name}}</p>
+//                     </div>
+//                 </div>
+//             </isotope-item>
+//         </div>
+//     </div>
+// </isotope-grid>
