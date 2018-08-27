@@ -3,8 +3,6 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { Snap } from "../_models/snap";
 
-import { IsotopeOptions } from 'ngx-isotope';
-
 declare var $:JQueryStatic;
 /// <reference path="galery.item.d.ts" />
 
@@ -15,12 +13,8 @@ declare var $:JQueryStatic;
  
 export class GaleryItemComponent implements OnInit, AfterViewInit{
 
-    @ViewChild('gridSnapsContainer') gridSnapsContainer:ElementRef;
-    // @ViewChild('galeryContainer') galery:ElementRef;
-
-    @ViewChildren('gallery_img_own') gallery_img_own: QueryList<ElementRef>;
-
-    // @ViewChildren('single-galery-item') galeryItems: QueryList<ElementRef>;
+    @ViewChild('galeryContainer') gridSnapsContainer:ElementRef;
+    // @ViewChildren('popUpLink') popUpLinks: QueryList<ElementRef>;
 
     galeryIntited : boolean = false;
 
@@ -47,7 +41,7 @@ export class GaleryItemComponent implements OnInit, AfterViewInit{
             .subscribe (snaps => {
                 this.compSnaps = snaps;
                 this.applyMagnifier();
-                // this.applyIsotope();
+                this.applyIsotope();
             });
     }
 
@@ -83,10 +77,8 @@ export class GaleryItemComponent implements OnInit, AfterViewInit{
         }
 
         setTimeout(() => { 
-            // $(this.gridSnapsContainer.nativeElement).magnificPopup(options);
+            $(this.gridSnapsContainer.nativeElement).magnificPopup(options);
             this.galeryIntited = true;
-
-            this.gallery_img_own.forEach((child) => { $(child.nativeElement).magnificPopup({options}); })
 
         }, 2000);
         
@@ -95,7 +87,7 @@ export class GaleryItemComponent implements OnInit, AfterViewInit{
     applyIsotope(){
 
         var options = {
-            itemSelector: '.single_gallery_item',
+            itemSelector: '.single_gallery_item_own',
             percentPosition: true,
             masonry: {
                 gutter: 0
@@ -103,20 +95,12 @@ export class GaleryItemComponent implements OnInit, AfterViewInit{
         };
 
         setTimeout(() => { 
-            // $(this.galery.nativeElement).isotope(options);
+            $(this.gridSnapsContainer.nativeElement).isotope(options);
             
         }, 3000);
     }
 
     ngAfterViewInit() {
         
-    }
-
-    public myOptions: IsotopeOptions = {
-        itemSelector: '.single_gallery_content',
-        percentPosition: true,
-        masonry: {
-            gutter: 0
-        }
-    };
+    }   
 }
