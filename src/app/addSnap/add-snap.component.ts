@@ -16,7 +16,7 @@ const URL = "this is the URL";
 
 @Component({
     selector : "add-snap",
-    templateUrl : "add-Snap.component.html"
+    templateUrl : "add-snap.component.html"
 })
 
 export class AddSnapComponent implements OnInit{
